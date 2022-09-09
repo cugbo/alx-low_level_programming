@@ -3,7 +3,7 @@
 #include <stdio.h>
 /*
  * main - main block
- * number stored in the varibale n
+ * prints the last digit of the random number stored in the varibale n
  * Return: Always 0 (Success)
  */
 int main(void)
