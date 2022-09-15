@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * more_numbers - print 10 times the numbers from 0 to 14
  * Description: can only use _putchar 3 timess
@@ -17,4 +16,5 @@ void more_numbers(void)
 			_putchar(j % 10 + '0');
 		}
 		_putchar('\n');
+	}
 }
