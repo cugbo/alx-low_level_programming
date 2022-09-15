@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 /**
  * main - main block. Solve fizz buzz from numbers 1 to 100
@@ -9,20 +10,24 @@ int main(void)
 {
 	int i;
 
-	i = 1;
-	while (i <= 100)
+	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
-			printf("FizzBuzz");
-		else if (i % 3 == 0)
-			printf("Fizz");
-		else if (i % 5 == 0)
-			printf("Buzz")
-		else
+		if (i % 3 == 0 && i % 5 != 0)
+		{
+			printf(" Fizz");
+		} else if (i % 5 == 0 && i % 3 != 0)
+		{
+			printf(" Buzz");
+		} else if (i % 3 == 0 && i % 5 == 0)
+		{
+			printf(" FizzBuzz");
+		} else if (i == 1)
+		{
 			printf("%d", i);
-		if (i != 100)
-			printf(" ");
-		i++;
+		} else
+		{
+			printf(" %d", i);
+		}
 	}
 	printf("\n");
 	return (0);
