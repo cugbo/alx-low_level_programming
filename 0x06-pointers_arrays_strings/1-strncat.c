@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * _strncpy - Copy a string starting from index 0 of 'dest'
+ * _strncat - two words
  * @dest: string
  * @src: string
- * @n: number of chars to copy over
+ * @n: int parameter
  * Return: 'dest' edited string
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
 	int m, i;
 
