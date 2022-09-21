@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * cap_string - capitalize all words of a string
  * @str: string
@@ -6,31 +7,16 @@
  */
 char *cap_string(char *str)
 {
-	int i, c;
-	int trigger;
-	char nots[] = ",;.!?(){}\n\t\" ";
+	int i, j;
+	char delimeters[] = " \t\n,;.!?\"(){}";
 
-	for (i = 0; trigger = 0; str[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (str[0] > 96 && str[0] < 123)
-			trigger = 1;
-		for (c = 0; nots[c] != '\0'; c++)
-		{
-			if (nots[c] == str[i])
-				trigger = 1;
-		}
-		if (trigger)
-		{
-			if (str[i] > 96 && str[i] < 123)
-			{
-				str[i] -= 32;
-				trigger = 0;
-			}
-			else if (str[i] > 64 && str[i] < 91)
-				trigger = 0;
-			else if (str[i] > 47 && str[i] < 58)
-				trigger = 0;
-		}
+		if (s[0] >= 97 && s[0] <= 122)
+			s[0] = s[0] - 32;
+		for (j = 0; delimeters[j] != '\0'; j++)
+			if (s[i] == delimeters[j] && s[i + 1] > 97 && s[i + 1] <= 122)
+				s[i + 1] = s[i + 1] - 32;
 	}
 	return (str)
 }
