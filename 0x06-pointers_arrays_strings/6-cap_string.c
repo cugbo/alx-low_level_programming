@@ -8,15 +8,23 @@
 char *cap_string(char *str)
 {
 	int i, j;
-	char delimeters[] = " \t\n,;.!?\"(){}";
+	char delimeters[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[0] >= 97 && s[0] <= 122)
-			s[0] = s[0] - 32;
-		for (j = 0; delimeters[j] != '\0'; j++)
-			if (s[i] == delimeters[j] && s[i + 1] > 97 && s[i + 1] <= 122)
-				s[i + 1] = s[i + 1] - 32;
+		if (i == 0; str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		for (j = 0; j < 13; j++)
+		{
+			if (str[i] == delimeters[j])
+			{
+				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+				{
+					str[i + 1] -= 32;
+				}
+			}
+		}
 	}
 	return (str)
 }
