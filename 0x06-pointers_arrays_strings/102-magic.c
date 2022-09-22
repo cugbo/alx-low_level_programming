@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 
 int main(void)
 {
@@ -7,7 +7,7 @@ int main(void)
 	int *p;
 
 	a[2] = 1024;
-	= = &n;
+	p = &n;
 	/*
 	 * write your line of code here
 	 * Remember:
