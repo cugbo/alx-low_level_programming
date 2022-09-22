@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include "main.h"
+/**
+ * main - main block
+ * Return: void
+ */
 
 int main(void)
 {
@@ -9,7 +13,8 @@ int main(void)
 
 	a[2] = 1024;
 	p = &n;
-	/*
+	/**
+	 * main - main block
 	 * write your line of code here
 	 * Remember:
 	 * - you are not allowed to use a
