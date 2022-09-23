@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+
 /**
  * main - main block do magic
  * Return: 0
