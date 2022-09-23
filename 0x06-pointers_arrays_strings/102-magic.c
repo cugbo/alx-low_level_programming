@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+/**
+ * main - main block
+ * Return: void
+ */
 int main(void)
 {
 	int n;
