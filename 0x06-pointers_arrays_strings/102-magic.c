@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - main block do magic
+ * main - do magic
  * Return: 0
  */
 
