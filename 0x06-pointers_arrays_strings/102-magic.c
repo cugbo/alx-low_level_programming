@@ -3,6 +3,7 @@
 
 /**
  * main - do magic
+ * - do not change a code
  * Return: 0
  */
 
