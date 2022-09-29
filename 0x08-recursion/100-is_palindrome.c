@@ -1,4 +1,6 @@
 #include "main.h"
+int get_length(char *s);
+int my_pal(char *s, int l);
 /**
  * is_palindrome - checks if a string is a palindrome
  * @s: string to reverse
