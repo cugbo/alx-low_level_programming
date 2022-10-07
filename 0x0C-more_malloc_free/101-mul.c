@@ -44,9 +44,9 @@ char *create_xarray(int size)
 		exit(98);
 
 	for (index = 0; index < (size - 1); index++)
-		array[index] = x;
+		array[index] = 'x';
 
-	array[index] = 0;
+	array[index] = '\0';
 
 	return (array);
 }
@@ -60,7 +60,7 @@ char *create_xarray(int size)
  */
 char *iterate_zeroes(char *str)
 {
-	while (*str && *str == 0)
+	while (*str && *str == '0')
 		str++;
 
 	return (str);
@@ -76,7 +76,7 @@ char *iterate_zeroes(char *str)
  */
 int get_digit(char c)
 {
-	int digit = c - 0;
+	int digit = c - '0';
 
 	if (digit < 0 || digit > 9)
 	{
@@ -106,7 +106,7 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
 
 	while (*prod)
 	{
-		*prod = x;
+		*prod = 'x';
 		prod++;
 	}
 
@@ -114,26 +114,26 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
 
 	while (zeroes--)
 	{
-		*prod = 0;
+		*prod = '0';
 		prod--;
 	}
 
 	for (; mult_len >= 0; mult_len--, mult--, prod--)
 	{
-		if (*mult < 0 || *mult > 9)
+		if (*mult < '0' || *mult > '9')
 		{
 			printf("Error\n");
 			exit(98);
 		}
 
-		num = (*mult - 0) * digit;
+		num = (*mult - '0') * digit;
 		num += tens;
-		*prod = (num % 10) + 0;
+		*prod = (num % 10) + '0';
 		tens = num / 10;
 	}
 
 	if (tens)
-		*prod = (tens % 10) + 0;
+		*prod = (tens % 10) + '0';
 }
 
 /**
@@ -152,22 +152,22 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 	while (*(next_prod + 1))
 		next_prod++;
 
-	for (; *final_prod != x; final_prod--)
+	for (; *final_prod != 'x'; final_prod--)
 	{
-		num = (*final_prod - 0) + (*next_prod - 0);
+		num = (*final_prod - '0') + (*next_prod - '0');
 		num += tens;
-		*final_prod = (num % 10) + 0;
+		*final_prod = (num % 10) + '0';
 		tens = num / 10;
 
 		next_prod--;
 		next_len--;
 	}
 
-	for (; next_len >= 0 && *next_prod != x; next_len--)
+	for (; next_len >= 0 && *next_prod != 'x'; next_len--)
 	{
-		num = (*next_prod - 0);
+		num = (*next_prod - '0');
 		num += tens;
-		*final_prod = (num % 10) + 0;
+		*final_prod = (num % 10) + '0';
 		tens = num / 10;
 
 		final_prod--;
@@ -175,7 +175,7 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 	}
 
 	if (tens)
-		*final_prod = (tens % 10) + 0;
+		*final_prod = (tens % 10) + '0';
 }
 
 /**
@@ -198,11 +198,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (*(argv[1]) == 0)
+	if (*(argv[1]) == '0')
 		argv[1] = iterate_zeroes(argv[1]);
-	if (*(argv[2]) == 0)
+	if (*(argv[2]) == '0')
 		argv[2] = iterate_zeroes(argv[2]);
-	if (*(argv[1]) == 0 || *(argv[2]) == 0)
+	if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
 	{
 		printf("0\n");
 		return (0);
@@ -220,10 +220,10 @@ int main(int argc, char *argv[])
 	}
 	for (index = 0; final_prod[index]; index++)
 	{
-		if (final_prod[index] != x)
+		if (final_prod[index] != 'x')
 			putchar(final_prod[index]);
 	}
-	putchar(n);
+	putchar('\n');
 
 	free(next_prod);
 	free(final_prod);
