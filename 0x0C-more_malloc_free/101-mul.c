@@ -32,7 +32,7 @@ int _strlen(char *s)
 	{
 		i++;
 	}
-	return (i);
+	return (1);
 }
 /**
  * errors - handles error for main
