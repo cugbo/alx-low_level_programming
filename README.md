@@ -1,2 +1,1 @@
-###C Programming
-This is the beginning of the low language C Language
+ ### 0x0E-structures_typedef
