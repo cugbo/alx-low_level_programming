@@ -16,6 +16,6 @@ void print_binary(unsigned long int n)
 	}
 	else
 	{
-		_putchar(0);
+		_putchar('0');
 	}
 }
